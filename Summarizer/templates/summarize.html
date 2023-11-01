@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Summarizer</title>
+</head>
+<body>
+    <h1>Text Summarizer</h1>
+    <form method="post" action="{% url 'summarize_text' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Summarize</button>
+    </form>
+</body>
+</html>
