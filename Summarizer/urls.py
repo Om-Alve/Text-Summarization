@@ -1,6 +1,6 @@
 from django.urls import path
-from . import views 
+from . import views
 
 urlpatterns = [
-    path('summarize_text/',views.summarize_text)
+    path('summarize/', views.summarize_text, name='summarize_text'),
 ]

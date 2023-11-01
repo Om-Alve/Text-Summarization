@@ -10,7 +10,7 @@ def summarize_text(request):
         form = TextForm(request.POST)
         if form.is_valid():
             text = form.save()
-            summary = pipe(text.content)['summary']  # You can adjust the word count for the summary.
+            summary = pipe(text.content)[0]['summary_text']  # You can adjust the word count for the summary.
             return render(request, 'summary.html', {'text': text, 'summary': summary})
     else:
         form = TextForm()
